@@ -106,21 +106,15 @@ func main() {
 	}
 
 	err = client.PlayOpt(&PlayOptions)
+	client.Play()
 
 	if err != nil {
 		fmt.Println(err)
 	}
 
-	// fmt.Println(albumCover)
-	// // a := exec.Command("pixterm", "-s", "2", "-tr", "10", albumCover)
-	// a := exec.Command("curl", "|", albumCover)
-	// output, err := a.Output()
-
-	// if err != nil {
-	// 	fmt.Println(err)
-	// }
-
-	// fmt.Println(output)
+	if !imgcat.IsSupported() {
+		os.Exit(0)
+	}
 
 	enc, err := imgcat.NewEncoder(os.Stdout, imgcat.Width(imgcat.Pixels(200)), imgcat.Inline(true), imgcat.Name(albumCover))
 	if err != nil {
@@ -131,14 +125,11 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	// defer func() { _ = f.Close() }()
 
 	// Display the image in the terminal.
 	if err := enc.Encode(f.Body); err != nil {
-		log.Fatal(err)
+		// log.Fatal(err)
 	}
-
-	client.Play()
 
 }
 
