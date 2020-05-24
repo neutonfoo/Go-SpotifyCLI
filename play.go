@@ -18,15 +18,14 @@ import (
 const redirectURI = "http://localhost:8080/callback"
 
 var (
-	clientID                  = os.Getenv("CLIENT_ID")
-	secretKey                 = os.Getenv("SECRET_KEY")
-	auth                      = spotify.NewAuthenticator(redirectURI, spotify.ScopeUserReadPrivate, spotify.ScopeUserReadPlaybackState, spotify.ScopeUserModifyPlaybackState)
-	currentUser, _            = user.Current()
-	state                     = "playcli"
-	tokenDir                  = currentUser.HomeDir + "/spotify_token.json"
-	ch                        = make(chan bool)
-	searchLimit               = 10
-	deviceID       spotify.ID = "e0de5c9401d26cd93b09062879299413f020263e"
+	clientID       = os.Getenv("CLIENT_ID")
+	secretKey      = os.Getenv("SECRET_KEY")
+	auth           = spotify.NewAuthenticator(redirectURI, spotify.ScopeUserReadPrivate, spotify.ScopeUserReadPlaybackState, spotify.ScopeUserModifyPlaybackState)
+	currentUser, _ = user.Current()
+	state          = "playcli"
+	tokenDir       = currentUser.HomeDir + "/spotify_token.json"
+	ch             = make(chan bool)
+	searchLimit    = 10
 )
 
 func main() {
@@ -101,7 +100,6 @@ func main() {
 	fmt.Println("♫ Playing", title, "by", artist, "("+album+")")
 
 	PlayOptions := spotify.PlayOptions{
-		DeviceID: &deviceID,
 		URIs: []spotify.URI{
 			uri,
 		},
