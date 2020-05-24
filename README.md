@@ -29,3 +29,7 @@ During testing, I ran into issues where the song would not start due to there be
 I used `go build` to generate a binary (named `play`) and placed it in my `~/bin` folder. If you want to do this, don't forget to add `$HOME/bin` into your path as it's not included on macOS by default. You may also need to hardcode your client id and secret key.
 
 <img src="screenshot.png" alt="Go-SpotifyCLI Screenshot" width="350"/>
+
+<br>
+
+<img src="screenshot2.png" alt="Go-SpotifyCLI Screenshot 2" width="350"/>
