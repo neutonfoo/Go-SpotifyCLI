@@ -32,4 +32,4 @@ I used `go build` to generate a binary (named `play`) and placed it in my `~/bin
 
 <br>
 
-<img src="screenshot2.png" alt="Go-SpotifyCLI Screenshot 2" width="350"/>
+<img src="screenshot-2.png" alt="Go-SpotifyCLI Screenshot 2" width="350"/>
