@@ -4,7 +4,7 @@ I made this for fun and to practice using Go. It isn't meant for serious use. Al
 
 ## Dependencies
 
-Install dependencies with `go get -d ./`.
+Install dependencies with `go get -d ./`
 
 ## Install Instruction
 
@@ -22,8 +22,10 @@ Then run `go run play.go search query`. This will perform a track search via the
 
 To, instead, select from a list of returned results use the `-l` flag. It will list the top 10 results and prompt for which one to play.
 
+During testing, I ran into issues where the song would not start due to there being no active speaker. In order to set the active player, use the `-p` flag. Selection of the player will be similar to the `-l` flag.
+
 ## Screenshots
 
-`go build` was used to generate a binary (which I named `play`) and I placed it in my `~/bin` folder. If you want to do this, don't forget to add `$HOME/bin` into your path as it's not included on macOS by default.
+I used `go build` to generate a binary (named `play`) and placed it in my `~/bin` folder. If you want to do this, don't forget to add `$HOME/bin` into your path as it's not included on macOS by default. You may also need to hardcode your client id and secret key.
 
-![Go-SpotifyCLI Screenshot](screenshot.png 'Go-SpotifyCLI Screenshot')
+<img src="screenshot.png" alt="Go-SpotifyCLI Screenshot" width="350"/>
